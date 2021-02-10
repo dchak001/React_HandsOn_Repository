@@ -1,0 +1,23 @@
+.mydiv{
+    margin-left:auto;
+    margin-right: auto;
+    
+}
+
+
+td,th,table{
+    border-collapse: separate ;
+     border: 2px solid grey;
+     border-spacing: 1px;
+     color:#00803fa8
+     
+ }
+ h1{
+   color:green
+ }
+ table{
+   padding:5px
+ }
+ 
+
+ 
