@@ -1,50 +1,43 @@
-import React from 'react'
 
-export class Simple extends React.Component{
+import React, { useState } from "react";
+import { CurrencyConvertor } from "./CurrencyConvertor";
+
+const Simple = () => {
+    const [count, setCount] = useState(0);
+  const sayHello = (name) => {
+    return(
+          alert(`Hello! ${name}`));
+  };
+  const CustomButton = ({ onPress }) => {
+    return (
+      <button type="button" onClick={onPress}>
+        Click on me
+      </button>
+    );
+  }
+  
+  const handleEvent = () => {
+      alert("I was clicked");
+    };
+  
+    
+  return (
+    <div>
+      <p>{count}</p>
+      <button onClick={() =>{sayHello("CTS");setCount(count + 1)}}>Increment</button><br/>
+      <button onClick={() => setCount(count - 1)}>Decrement</button><br/>
+      <button value="Hello" onClick={(e) => alert(e.target.value)}>
+      Say 
+      </button><br/>
+      <CustomButton onPress={handleEvent} /><br/>
+      <CurrencyConvertor/>
+    </div>
+  );
+
+  }
+export default Simple;
 
 
-    constructor()
-    {
-        super();
-        this.state={
-            count:0
-        }
-    }
-    handleInc =()=>
-    {
-        this.setState({
-            count:this.state.count+1
-        },()=>alert("Hello Member1"))
-    }
 
-    handleDec =()=>
-    {
-        this.setState({
-            count:this.state.count-1
-        },()=>alert("Hello Member1"))
-    }
 
-    welcomeHandler=(msg)=>
-    {
-        alert(msg)
-    }
 
-    onPress=()=>
-    {
-        alert("I am clicked")
-    }
-
-    render()
-    {
-        return(
-            <div>
-                {this.state.count}
-              
-               <div> <button  onClick={this.handleInc}>Increment</button></div>
-               <div><button  onClick={this.handleDec}>Decrement</button></div> 
-               <div><button  onClick={()=>this.welcomeHandler("welcome")}>Say Welcome</button></div> 
-               <div> <button  onClick={()=>this.onPress}>Click on me</button></div>
-            </div>
-        );
-    }
-}

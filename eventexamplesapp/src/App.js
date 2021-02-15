@@ -5,9 +5,9 @@ import { CurrencyConvertor } from './Components/CurrencyConvertor';
 
 function App() {
   return (
-    <div style={{marginTop:300}}>
+    <div >
      <Simple/>
-     <br/>
+     
      <CurrencyConvertor/>
     </div>
   );
